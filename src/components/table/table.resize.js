@@ -30,11 +30,6 @@ export const resizeHandler = ($root, event) => {
     document.onmouseup = () => {
         document.onmousemove = null
         document.onmouseup = null
-
-        $resizer.css({
-            opacity: 0,
-            bottom: 0
-        })
         if (type === 'col') {
             $parent.css({
                 width: value + 'px'
@@ -45,5 +40,10 @@ export const resizeHandler = ($root, event) => {
                 height: value + 'px'
             })
         }
+        $resizer.css({
+            opacity: 0,
+            bottom: 0,
+            right: 0
+        })
     }
 }
